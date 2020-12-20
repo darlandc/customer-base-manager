@@ -18,14 +18,14 @@ export class AddComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.customer = new Customer();
+    this.customer = new Customer(1, '', '02337070401', '01333001', null,'Bel a Vista','Sao Paulo','SP');
   }
 
-  add(): void {
+  add(customer): void {
   if (this.formCustomer.form.valid) {
-    //this.formCustomer(this.customer);
-    this.router.navigate(['/customers']);
+    customer = this.customer.nome;
+    this.customerService.add(this.customer);
+    this.router.navigate(['customers/list']);
     }
   }
-
 }

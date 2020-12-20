@@ -35,7 +35,7 @@ export class CustomerService {
     });
   }
 
-  remove(id: number): void {
+  delete(id: number): void {
     let customers: Customer[] = this.listAll();
     customers = customers.filter(customer => customer.id !== id);
     localStorage.customers = JSON.stringify(customers);

@@ -1,11 +1,15 @@
 {
-  "name": "app",
-  "version": "0.0.0",
+  "name": "customers-base-manager",
+  "version": "0.0.1",
+  "author": {
+    "name": "Darlan de Castro Iribarrem",
+    "email": "darlandc@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

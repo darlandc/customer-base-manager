@@ -1,27 +1,27 @@
-<!-- <h1>Cadastrar:</h1>
+<h1>Cadastrar:</h1>
 
 <div class="well container-fluid">
   <div class="row col-sm-12">
-      <form (ngSubmit)="add(formCustomer)" #formCustomer="ngForm">
+      <form (ngSubmit)="add(customer)" #formCustomer="ngForm">
       <div class="form-group">
-        <label for="nome">Customer:</label>
+        <label for="name">Nome:</label>
         <br>
         <input type="text"
         class="form-control"
-        id="nome"
-        name="nome"
+        id="name"
+        name="name"
         [(ngModel)]="customer.nome"
-        #nome="ngModel"
+        #name="ngModel"
         minlength="5"
         required
         width="auto">
          <br>
-      <div *ngIf="nome.errors && (nome.dirty || nome.touched)"
+      <div *ngIf="name.errors && (name.dirty || name.touched)"
            class="alert alert-danger">
-    <div [hidden]="!nome.errors.required">
-    Digite o Cliente:
+    <div [hidden]="!name.errors.required">
+    Digite o campo corretamente!
     </div>
-    <div [hidden]="!nome.errors.minlength">
+    <div [hidden]="!name.errors.minlength">
      Deve conter ao menos 5 caracteres!
     </div>
       </div>
@@ -29,16 +29,11 @@
     <div class="form-group text-center">
 
       <input type="button"
-      (click)="add()"
+      (click)="add(customer)"
       class="btn btn-success"
-      value="Add"
+      value="Salvar"
       [disabled]="formCustomer?.invalid">
-      <a [routerLink]="['/customers']"
-      class="btn btn-default">
-        <span class="glyphicon glyphicon-chevron-left"
-        aria-hidden="true"></span>
-      </a>
     </div>
   </form>
 </div>
-</div> -->
+</div>

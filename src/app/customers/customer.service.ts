@@ -41,7 +41,4 @@ export class CustomerService {
     localStorage.customers = JSON.stringify(customers);
   }
 
-  changeStatus(id){}
-
-
 }

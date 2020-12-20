@@ -19,14 +19,14 @@ export class EditComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.params['id'];
+    const id = +this.route.snapshot.params.id;
     this.customer = this.customerService.findById(id);
   }
 
   update(): void {
   if (this.formCustomer.form.valid) {
-    this.customerService.add(this.customer);
-    this.router.navigate(['/customers']);
+    this.customerService.update(this.customer);
+    this.router.navigate(['/']);
     }
   }
 }

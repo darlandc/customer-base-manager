@@ -27,11 +27,4 @@ export class ListComponent implements OnInit {
       this.customers = this.customerService.listAll();
     }
   }
-
-  changeStatus(customer: Customer): void {
-    if (confirm('Deseja alterar o status da cliente "' + customer.nome + '"?')) {
-      this.customerService.changeStatus(customer.id);
-      this.customers = this.customerService.listAll();
-    }
-  }
 }

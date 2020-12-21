@@ -1,6 +1,4 @@
-import { EditComponent } from './edit/edit.component';
-import { AddComponent } from './add/add.component';
-import { ListComponent } from './list/list.component';
+import { AddComponent, EditComponent, ListComponent } from './';
 import { Routes } from '@angular/router';
 
 export const CustomersRoutes: Routes = [

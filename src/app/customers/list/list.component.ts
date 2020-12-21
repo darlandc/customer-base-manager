@@ -1,6 +1,7 @@
 import { CustomerService } from './../customer.service';
 import { Customer } from '../';
 import { Component, OnInit } from '@angular/core';
+import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-list',
@@ -9,22 +10,31 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
 
   customers: Customer[];
+  showModal: boolean;
+  confirmDelete: boolean;
+  customer: Customer;
 
   constructor(private customerService: CustomerService)  { }
 
   ngOnInit(): void {
-    this.customers = this.listarTodos();
+    this.customers = this.listAll();
   }
 
-  listarTodos(): Customer[] {
+  listAll(): Customer[] {
     return this.customerService.listAll();
   }
 
-  delete($event: any, customer: Customer): void {
-    $event.preventDefault();
-    if (confirm('Deseja remover a cliente "' + customer.nome + '"?')) {
-      this.customerService.delete(customer.id);
+  deleteConfirmation(customer: Customer): void {
+    this.customer = customer;
+    this.showModal = true;
+  }
+
+  getResponseModal(event): any {
+    this.showModal = event.showModal;
+    if (event.shouldDelete){
+      this.customerService.delete(this.customer.id);
       this.customers = this.customerService.listAll();
     }
   }
+
 }

@@ -1,13 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-  background-color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+body {
   color: #CCC;
   .wrapper {
-    border: 1px solid greenyellow;
+    display: flex;
+    flex-flow: column;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     h2 {
       font-size: 11px;
     }
+    .wrapper-list {
+      padding: 20px;
+    }
   }
+}
 }

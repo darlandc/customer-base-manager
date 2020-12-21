@@ -1,0 +1,21 @@
+
+<div *ngIf="showModal" class="modal-delete">
+    <div class="overlay"></div>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-h eader">
+          <h5 class="modal-title">Confirmação</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Tem certeza que deseja excluir este cadastro?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="confirm()">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,3 +1,4 @@
+import { ModalComponent } from './customers/modal/modal.component';
 import { AddComponent } from './customers/add/add.component';
 import { ListComponent } from './customers/list/list.component';
 import { EditComponent } from './customers/edit/edit.component';
@@ -22,6 +23,7 @@ const maskConfig: Partial<IConfig>   = {
     AddComponent,
     EditComponent,
     ListComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ const maskConfig: Partial<IConfig>   = {
     AddComponent,
     EditComponent,
     ListComponent,
+    ModalComponent
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

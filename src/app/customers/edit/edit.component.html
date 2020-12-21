@@ -31,26 +31,45 @@
             <label for="cpf">CPF:</label>
             <br>
             <input type="text"
+            mask="000-000.00"
             class="form-control"
             id="cpf"
             name="cpf"
             [(ngModel)]="customer.cpf"
             #cpf="ngModel"
-            minlength="5"
             required
-            width="auto">
+            width="auto"
+            minlength="8">
              <br>
           <div *ngIf="cpf.errors && (cpf.dirty || cpf.touched)"
                class="alert alert-danger">
-        <div [hidden]="!cpf.errors.required">
-        Digite o campo corretamente!
-        </div>
         <div [hidden]="!cpf.errors.minlength">
-         Deve conter ao menos 5 caracteres!
+        Este campo deve conter 8 números!
         </div>
           </div>
             </div>
 
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <br>
+                <input type="text"
+                mask="000-000.00"
+                class="form-control"
+                id="cep"
+                name="cep"
+                [(ngModel)]="customer.cep"
+                #cep="ngModel"
+                required
+                width="auto"
+                minlength="9">
+                 <br>
+              <div *ngIf="cep.errors && (cep.dirty || cep.touched)"
+                   class="alert alert-danger">
+            <div [hidden]="!cep.errors.minlength">
+                Este campo deve conter 9 números!
+            </div>
+              </div>
+                </div>
 
     <div class="form-group text-center">
 

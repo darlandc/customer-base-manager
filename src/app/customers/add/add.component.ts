@@ -22,9 +22,8 @@ export class AddComponent implements OnInit {
   }
 
   add(customer): void {
-  if (this.formCustomer.form.valid) {
-    customer = this.customer.nome;
-    this.customerService.add(this.customer);
+  if (this.formCustomer.form.valid) {;
+    this.customerService.add(customer);
     this.router.navigate(['customers/list']);
     }
   }

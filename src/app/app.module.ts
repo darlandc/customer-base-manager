@@ -5,14 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomersModule } from './customers/customers.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxMaskModule, IConfig } from 'ngx-mask';
-
-export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
-
-const maskConfig: Partial<IConfig> = {
-  validation: true,
-};
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,8 +15,7 @@ const maskConfig: Partial<IConfig> = {
     BrowserModule,
     AppRoutingModule,
     CustomersModule,
-    FormsModule,
-    NgxMaskModule.forRoot(maskConfig),
+    FormsModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]
